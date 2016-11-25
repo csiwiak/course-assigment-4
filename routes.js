@@ -29,6 +29,17 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
         return MenuDataService.getAllCategories();
       }]
     }
+  })
+  // Items
+ .state('items', {
+    url: '/items/{categoryId}',
+    templateUrl: 'templates/items.template.html',
+    controller: 'ItemsControler as itemsControler',
+    resolve: {
+      selectedItems: ['MenuDataService','$stateParams', function (MenuDataService, $stateParams) {
+        return MenuDataService.getItemsForCategory($stateParams.categoryId);
+      }]
+    }
   });
 }
 

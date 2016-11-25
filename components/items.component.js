@@ -3,8 +3,8 @@
 
 
 angular.module('data')
-.component('items', {
-  templateUrl: 'templates/items.template.html',
+.component('itemsList', {
+  templateUrl: 'templates/items-list.template.html',
   bindings: {
     items: '<'
   }
